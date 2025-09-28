@@ -1,12 +1,25 @@
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import "./assets/main.css";
 
-import App from './App.vue'
-import router from './router'
+import { createApp } from "vue";
+import { createPinia } from "pinia";
+import { createRouter, createWebHistory } from "vue-router";
+import ui from "@nuxt/ui/vue-plugin";
 
-const app = createApp(App)
+import Index from "./pages/index.vue";
 
-app.use(createPinia())
-app.use(router)
+import App from "./App.vue";
 
-app.mount('#app')
+const app = createApp(App);
+
+const router = createRouter({
+  routes: [
+    { path: '/', component: Index },
+  ],
+  history: createWebHistory(),
+});
+
+app.use(createPinia());
+app.use(router);
+app.use(ui);
+
+app.mount("#app");
