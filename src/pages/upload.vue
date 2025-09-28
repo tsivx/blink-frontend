@@ -5,6 +5,7 @@ import { dateToISO } from '@/utils/dayjs';
 import axios from 'axios';
 import { onMounted, ref } from 'vue';
 import { Octokit } from '@octokit/rest';
+import { Base64 } from 'js-base64';
 
 const toast = useToast();
 const file = ref(null);
@@ -33,22 +34,20 @@ const uploadState = async (uploadParams: UploadStateParams) => {
 
     const owner = "tsivx";
     const repo = "blink-frontend";
-    const path = "public/v1/state.json";
+    const path = "public/api/v1/state.json";
 
-    // 1. Получаем SHA текущего файла
     const { data: file } = await octokit.repos.getContent({
         owner,
         repo,
         path,
     });
 
-    // 2. Обновляем файл
     const { data } = await octokit.repos.createOrUpdateFileContents({
         owner,
         repo,
         path,
         message: "update state.json",
-        content: btoa(JSON.stringify(uploadParams.newState, null, 2)),
+        content: Base64.encode(JSON.stringify(uploadParams.newState, null, 2)),
         sha: Array.isArray(file) ? file[0].sha : file.sha,
     });
 
@@ -142,6 +141,7 @@ const onUpload = () => {
                     }],
                 });
             } catch (error) {
+                console.error(error);
                 toast.add({
                     title: 'произошла ошибка :с',
                     description: 'нажми F12, перейди в console и сообщи об ошибке которая там появилась',
