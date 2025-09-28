@@ -46,7 +46,7 @@ const uploadState = async (uploadParams: UploadStateParams) => {
         owner,
         repo,
         path,
-        message: "update state.json",
+        message: "[skip-deploy] update state.json",
         content: Base64.encode(JSON.stringify(uploadParams.newState, null, 2)),
         sha: Array.isArray(file) ? file[0].sha : file.sha,
     });
