@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { Lesson, Profile } from '@/types/state';
-import { djs } from '@/utils/dayjs';
 import { profileKeyMap } from '@/utils/helpers';
 import { computed } from 'vue';
 

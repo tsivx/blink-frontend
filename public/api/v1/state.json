@@ -1,0 +1,29 @@
+{
+	"links": [
+		{
+			"title": "поддержать проект",
+			"description": "ведь блинк – личная инициатива, чтобы всем было удобно",
+			"icon": "i-lucide-heart",
+			"href": "https://pay.cloudtips.ru/p/6d76a463"
+		},
+		{
+			"title": "канал в телеге",
+			"description": "иногда там что-то важное",
+			"icon": "i-mdi-telegram",
+			"href": "https://blinkapp.t.me"
+		}
+	],
+	"week": {
+		"number": 1,
+		"dateStart": "2025-09-08T00:00:00+05:00",
+		"dateEnd": "2025-09-13T00:00:00+05:00"
+	},
+	"profiles": [
+		{
+			"type": "teacher",
+			"name": "tsivx",
+			"meta": {}
+		}
+	],
+	"lessons": []
+}

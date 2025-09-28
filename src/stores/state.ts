@@ -12,7 +12,7 @@ export const useState = defineStore('app', {
 
     actions: {
         async init() {
-            const { data } = await axios.get('https://raw.githubusercontent.com/tsivx/blink-storage/refs/heads/main/v1/state.json');
+            const { data } = await axios.get('/api/v1/state.json');
             this.$state = data;
         }
     }

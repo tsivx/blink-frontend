@@ -5,7 +5,8 @@ import { createPinia } from "pinia";
 import { createRouter, createWebHistory } from "vue-router";
 import ui from "@nuxt/ui/vue-plugin";
 
-import Index from "./pages/index.vue";
+import IndexPage from "./pages/index.vue";
+import UploadPage from "./pages/upload.vue";
 
 import App from "./App.vue";
 
@@ -13,7 +14,8 @@ const app = createApp(App);
 
 const router = createRouter({
   routes: [
-    { path: '/', component: Index },
+    { path: '/', component: IndexPage },
+    { path: '/upload', component: UploadPage },
   ],
   history: createWebHistory(),
 });

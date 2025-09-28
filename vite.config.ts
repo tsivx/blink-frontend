@@ -13,6 +13,7 @@ export default defineConfig({
     ui({
       ui: {
         colors: {
+          primary: "black",
           secondary: "black",
           neutral: "neutral",
         },
